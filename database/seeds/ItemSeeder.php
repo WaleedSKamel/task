@@ -17,10 +17,12 @@ class ItemSeeder extends Seeder
 
         $faker = Faker::create();
 
-        $image = $faker->image();
+
 
 
         foreach(range(1,10) as $in){
+
+            $image = $faker->image();
 
             $imageFile = new File($image);
 
