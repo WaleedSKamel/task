@@ -18,6 +18,9 @@ php artisan migrate
 
 php artisan db:seed
 
+# run server 
+php artisan serve 
+
 # file storage 
 
 php artisan storage:link
