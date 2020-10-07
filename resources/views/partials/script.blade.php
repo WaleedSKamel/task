@@ -102,7 +102,7 @@
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data){
                 $('.filterItems').html(data.my_items);
-
+                $('.alertMessage').addClass('hidden');
             }
         });
     })
@@ -116,6 +116,7 @@
             slide: function( event, ui ) {
                 $( "#amount_start" ).val( ui.values[ 0 ] );
                 $( "#amount_end" ).val( ui.values[ 1 ]  );
+                $('.alertMessage').addClass('hidden');
             }
         });
     } );
@@ -131,6 +132,7 @@
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (data){
                 $('.filterItems').html(data.my_items);
+                $('.alertMessage').addClass('hidden');
 
             }
         });

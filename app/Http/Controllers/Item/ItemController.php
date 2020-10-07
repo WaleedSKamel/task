@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Item;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreItemRequest;
 use App\Models\Items;
 use App\Repositories\Item\ItemRepository;
 use Illuminate\Http\Request;
@@ -23,6 +24,11 @@ class ItemController extends Controller
         $items = $data['item'];
 
         return view('shop',compact('items','cart'));
+    }
+
+    public function create()
+    {
+        return view('item.store');
     }
 
     private function showItems($items)
@@ -63,7 +69,7 @@ class ItemController extends Controller
         return $content;
     }
 
-    public function store(Request $request)
+    public function store(StoreItemRequest $request)
     {
         $item = $this->itemRepository->store($request);
 

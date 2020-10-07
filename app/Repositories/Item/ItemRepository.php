@@ -25,7 +25,14 @@ class ItemRepository
 
     public function store($request)
     {
-        $item = Items::create($request->all());
+        $data = $request->except('image');
+
+        if ($request->hasFile('image')){
+            $path = $request->file('image')->store('items');
+            $data['image'] = $path;
+        }
+
+        $item = Items::create($data);
         if ($item){
             return [
               'message' => 'Done save item',

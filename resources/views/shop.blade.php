@@ -13,7 +13,7 @@
             <div class="row flex-row-reverse">
                 <div class="col-lg-9">
                     <div class="shop-topbar-wrapper">
-                        <a href="addItem.html">Add Item</a>
+                        <a href="{!! route('item.create') !!}">Add Item</a>
                         <div class="shop-topbar-center">
                             <div class="view-mode nav">
                                 <div class="sidebar-widget ">

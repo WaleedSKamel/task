@@ -16,6 +16,10 @@ Route::group(['namespace'=>'Item'],function (){
 
     Route::get('/', 'ItemController@all')->name('get.items');
 
+    Route::get('/create', 'ItemController@create')->name('item.create');
+
+    Route::post('/store', 'ItemController@store')->name('item.store');
+
     Route::post('/search', 'ItemController@search')->name('item.search');
 
 
